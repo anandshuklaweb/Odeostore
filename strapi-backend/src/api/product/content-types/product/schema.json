@@ -24,24 +24,22 @@
       "minLength": 3,
       "maxLength": 130
     },
-    "description": {
-      "type": "text"
-    },
     "image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "category": {
       "type": "enumeration",
       "enum": [
         "tshirt",
-        "mug",
-        "hoodie",
-        "stickers"
+        "shirt",
+        "sweater",
+        "jacket",
+        "suit"
       ],
       "default": "tshirt",
       "required": true
@@ -68,6 +66,10 @@
     "availableQty": {
       "type": "integer",
       "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": false
     }
   }
 }
