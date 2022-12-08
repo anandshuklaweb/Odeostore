@@ -1,11 +1,11 @@
 import React from "react";
 import Link from "next/link";
 
-const Navbar = () => {
+const Navbar = ({ cart }) => {
   return (
     <>
-      <div className="flex z-80 justify-center h-[60px] z-30">
-        <nav className="self-center fixed  w-full  shadow bg-white">
+      <div className="flex justify-center h-[60px] z-30">
+        <nav className="  z-80self-center fixed  w-full  shadow bg-white">
           <div className="flex justify-between items-center p-2 text-black">
             <Link href={"/"}>
               <img
@@ -29,6 +29,11 @@ const Navbar = () => {
               </li>
             </ul>
             <div className="text-teal-600 text-center text-base pr-5 hidden lg:inline-flex">
+              <Link href={"/cart"}>
+                <button className=" hover:bg-teal-600 mr-2 hover:text-white  border-teal-600 border-2 rounded-sm py-1 px-6">
+                  Cart({cart.length})
+                </button>
+              </Link>
               <Link href={"/login"}>
                 <button className=" hover:bg-teal-600 hover:text-white  border-teal-600 border-2 rounded-sm py-1 px-6">
                   Login

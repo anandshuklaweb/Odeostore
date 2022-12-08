@@ -1,11 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Link from "next/link";
 
 const Products = (props) => {
-  useEffect(() => {
-    console.log(props.products);
-  }, []);
-
   return (
     <div className="2xl:container 2xl:mx-auto my-6 ">
       <div className="lg:px-20 md:px-6 px-4">
@@ -70,7 +66,6 @@ export async function getServerSideProps(context) {
   });
 
   let products = await a.json();
-  console.log(products);
 
   return {
     props: { products: products }, // will be passed to the page component as props
